@@ -3,255 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudPro | Lifetime Microsoft 365 Genuine Licenses</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>CloudPro | Lifetime Microsoft 365 Subscriptions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* --- CSS STYLES --- */
         :root {
-            --bg: #05070a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --primary: #6366f1;
-            --secondary: #a855f7;
-            --accent: #ec4899;
-            --text-main: #ffffff;
-            --text-dim: #94a3b8;
-            --grad: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --primary: #0078d4;
+            --primary-dark: #005a9e;
+            --secondary: #2b3137;
+            --accent: #00c6ff;
+            --light: #f8faff;
+            --white: #ffffff;
+            --text: #333333;
+            --text-muted: #666666;
+            --gradient: linear-gradient(135deg, #0078d4 0%, #00c6ff 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text);
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        /* --- VIBRANT UI ELEMENTS --- */
-        .text-gradient {
-            background: var(--grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glow-bg {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: var(--primary);
-            filter: blur(150px);
-            opacity: 0.15;
-            z-index: -1;
-            border-radius: 50%;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 1.5rem 0;
-            backdrop-filter: blur(20px);
-            background: rgba(5, 7, 10, 0.8);
-            border-bottom: 1px solid var(--glass-border);
-            z-index: 1000;
-        }
-        .nav-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-size: 1.5rem; font-weight: 800; text-decoration: none; color: #fff; letter-spacing: -1px; }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 180px 0 100px;
-            position: relative;
-            text-align: center;
-        }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
-        .hero p { color: var(--text-dim); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.2rem; }
-
-        /* --- PACKAGE CARDS --- */
-        .section { padding: 100px 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
 
-        .package-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
-        }
-        .package-card:hover {
-            transform: translateY(-12px);
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+        /* Typography */
+        h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 700; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+        p { margin-bottom: 1rem; }
+        .text-gradient { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .lifetime-badge {
-            position: absolute;
-            top: 20px; right: -35px;
-            background: var(--grad);
-            color: white;
-            padding: 8px 40px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            transform: rotate(45deg);
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .package-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .price-tag { font-size: 3.5rem; font-weight: 800; margin: 1.5rem 0; color: #fff; }
-        .price-tag span { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
-        
-        .feature-list { list-style: none; margin-bottom: 2.5rem; text-align: left; }
-        .feature-list li { margin-bottom: 1rem; color: var(--text-dim); display: flex; align-items: center; }
-        .feature-list li i { color: var(--primary); margin-right: 12px; font-size: 1.1rem; }
-
+        /* Buttons */
         .btn {
-            display: block; width: 100%; padding: 1.2rem;
-            border-radius: 14px; text-decoration: none; font-weight: 700;
-            text-align: center; transition: 0.3s;
-            border: none; cursor: pointer;
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
-        .btn-main { background: var(--grad); color: white; }
-        .btn-main:hover { opacity: 0.9; transform: scale(1.02); }
+        .btn-primary { background: var(--gradient); color: white; box-shadow: 0 4px 15px rgba(0, 120, 212, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 120, 212, 0.4); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        .btn-outline:hover { background: var(--primary); color: white; }
 
-        /* --- ICONS SECTION --- */
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem; margin-top: 5rem;
+        /* Navbar */
+        .navbar {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .feature-item i { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.6rem; font-weight: 700; color: var(--secondary); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero { padding-top: 140px; }
-            .pricing-grid { grid-template-columns: 1fr; }
+        /* Hero Section */
+        .hero { padding: 120px 0 80px; background: radial-gradient(circle at top right, #f0f7ff, #ffffff); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .hero-image img { width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
+        .hero-btns { display: flex; gap: 1rem; }
+
+        /* Features */
+        .section { padding: 100px 0; }
+        .section-header { margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; text-align: center; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .feature-card { padding: 3rem 2rem; background: var(--white); border-radius: 20px; box-shadow: var(--shadow); transition: 0.3s; border: 1px solid #f0f0f0; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+
+        /* Pricing */
+        .pricing { background-color: var(--light); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .price-card { background: white; padding: 3rem 2rem; border-radius: 20px; border: 1px solid #eee; text-align: center; position: relative; transition: 0.3s; }
+        .price-card.popular { border: 2.5px solid var(--primary); transform: scale(1.05); }
+        .popular-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+        
+        .lifetime-label { display: block; color: var(--primary); font-weight: 700; letter-spacing: 1px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .price { font-size: 3rem; font-weight: 700; margin: 1rem 0; }
+        .price span { font-size: 1rem; color: var(--text-muted); text-decoration: line-through; margin-right: 5px; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 2rem; }
+        .price-card li { margin-bottom: 0.8rem; font-size: 0.95rem; }
+        .price-card li i { color: #28a745; margin-right: 10px; }
+
+        /* FAQ */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #eee; padding: 1.5rem 0; cursor: pointer; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); margin-top: 0; }
+        .faq-item.active .faq-answer { max-height: 200px; margin-top: 1rem; }
+
+        /* Footer */
+        footer { background: var(--secondary); color: white; padding: 80px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 50px; }
+        .footer-logo { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; display: block; color: white; text-decoration: none; }
+        .footer-logo span { color: var(--primary); }
+        .footer-links h4 { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: #bbb; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid #444; padding-top: 20px; text-align: center; color: #888; font-size: 0.8rem; }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-btns { justify-content: center; }
+            h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+            .price-card.popular { transform: scale(1); }
         }
     </style>
 </head>
 <body>
 
-    <div class="glow-bg" style="top: -100px; right: -100px;"></div>
-    <div class="glow-bg" style="bottom: 100px; left: -100px; background: var(--accent);"></div>
-
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">MICRO<span class="text-gradient">GENIX</span></a>
-            <a href="#packages" class="btn btn-main" style="width: auto; padding: 0.6rem 1.5rem;">Buy License</a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Cloud<span>Pro</span></a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Packages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Support</a></li>
+            </ul>
+            <a href="#pricing" class="btn btn-primary">Get Lifetime Access</a>
         </div>
     </nav>
 
-    <header class="hero container">
-        <h1>One Time Purchase.<br><span class="text-gradient">Lifetime Productivity.</span></h1>
-        <p>Stop paying monthly fees. Get genuine, permanent Microsoft 365 licenses with 1TB Cloud Storage and the full Office Suite instantly.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-            <a href="#packages" class="btn btn-main" style="width: auto; padding: 1.2rem 3rem;">View Lifetime Deals</a>
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Pay Once. <span class="text-gradient">Use Forever.</span> Official 365.</h1>
+                <p>Break free from monthly subscriptions. Get your genuine Microsoft 365 lifetime account today. Includes 1TB OneDrive cloud storage and premium apps.</p>
+                <div class="hero-btns">
+                    <a href="#pricing" class="btn btn-primary">View Lifetime Deals</a>
+                    <a href="#features" class="btn btn-outline">How it Works</a>
+                </div>
+                <div style="margin-top: 2rem; color: #28a745; font-weight: 600;">
+                    <i class="fas fa-check-circle"></i> Permanent Activation &bull; Zero Monthly Fees
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1350&q=80" alt="Cloud Storage Dashboard">
+            </div>
         </div>
     </header>
 
-    <section id="packages" class="section">
+    <section id="features" class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem;">Choose Your <span class="text-gradient">Lifetime Package</span></h2>
-            <p style="text-align: center; color: var(--text-dim); margin-bottom: 4rem;">Permanent activation. No renewals. Ever.</p>
-            
+            <div class="section-header">
+                <h2>The Power of Lifetime Access</h2>
+                <p>Everything you love about Microsoft 365, without the recurring bill.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-times"></i>
+                    <h3>No Expiry Date</h3>
+                    <p>Unlike standard subscriptions, these accounts are activated for life. Pay once and enjoy the service forever.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>1TB OneDrive</h3>
+                    <p>Securely back up your photos, videos, and documents with massive 1TB personal cloud storage.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-laptop-house"></i>
+                    <h3>Multi-Device Use</h3>
+                    <p>Install and use on up to 5 devices simultaneously, including Windows, Mac, iOS, and Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Lifetime Packages</h2>
+                <p>Choose the official license that fits your needs perfectly.</p>
+            </div>
             <div class="pricing-grid">
-                <div class="package-card">
-                    <div class="lifetime-badge">Lifetime</div>
+                <div class="price-card">
+                    <span class="lifetime-label">Personal License</span>
                     <h3>Pro Personal</h3>
-                    <div class="price-tag">$49<span>/Once</span></div>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-circle-check"></i> 1 User Account</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 1TB OneDrive Storage</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Install on 5 Devices</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Word, Excel, PPT, Outlook</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Windows / Mac / Mobile</li>
+                    <div class="price"><span>$99</span>$49</div>
+                    <p style="color:var(--text-muted); margin-bottom:1.5rem;">One-Time Payment</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1 User Account</li>
+                        <li><i class="fas fa-check"></i> 1TB OneDrive Storage</li>
+                        <li><i class="fas fa-check"></i> Full Office Suite Premium</li>
+                        <li><i class="fas fa-check"></i> 5 Devices Allowed</li>
+                        <li><i class="fas fa-check"></i> Lifetime Updates</li>
                     </ul>
-                    <a href="#" class="btn btn-main">Get Instant Access</a>
+                    <a href="#" class="btn btn-outline" style="width:100%;">Buy Lifetime</a>
                 </div>
 
-                <div class="package-card" style="border-color: var(--primary); background: rgba(99, 102, 241, 0.05);">
-                    <div class="lifetime-badge">Lifetime</div>
-                    <div style="color: var(--primary); font-weight: 800; font-size: 0.8rem; margin-bottom: 0.5rem;">MOST POPULAR</div>
+                <div class="price-card popular">
+                    <div class="popular-badge">Best Seller</div>
+                    <span class="lifetime-label">Family License</span>
                     <h3>Family Bundle</h3>
-                    <div class="price-tag">$89<span>/Once</span></div>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Up to 6 Users</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 6TB Total Storage (1TB Each)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 30 Devices Total</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Full Premium App Access</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Advanced Family Safety</li>
+                    <div class="price"><span>$149</span>$89</div>
+                    <p style="color:var(--text-muted); margin-bottom:1.5rem;">One-Time Payment</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Up to 6 User Accounts</li>
+                        <li><i class="fas fa-check"></i> 6TB Total Storage (1TB Each)</li>
+                        <li><i class="fas fa-check"></i> Full Suite for 6 Users</li>
+                        <li><i class="fas fa-check"></i> 30 Total Devices</li>
+                        <li><i class="fas fa-check"></i> Lifetime Support</li>
                     </ul>
-                    <a href="#" class="btn btn-main">Get Family License</a>
+                    <a href="#" class="btn btn-primary" style="width:100%;">Get Bundle Deal</a>
                 </div>
 
-                <div class="package-card">
-                    <div class="lifetime-badge">Lifetime</div>
+                <div class="price-card">
+                    <span class="lifetime-label">Enterprise License</span>
                     <h3>Business Elite</h3>
-                    <div class="price-tag">$129<span>/Once</span></div>
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Commercial License</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Microsoft Teams Included</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Business-Grade Security</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 VIP Support</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Custom Domain Support</li>
+                    <div class="price"><span>$199</span>$129</div>
+                    <p style="color:var(--text-muted); margin-bottom:1.5rem;">One-Time Payment</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Commercial Rights</li>
+                        <li><i class="fas fa-check"></i> Microsoft Teams Full</li>
+                        <li><i class="fas fa-check"></i> Business Grade Security</li>
+                        <li><i class="fas fa-check"></i> Premium Admin Panel</li>
+                        <li><i class="fas fa-check"></i> VIP 24/7 Support</li>
                     </ul>
-                    <a href="#" class="btn btn-main">Get Business License</a>
+                    <a href="#" class="btn btn-outline" style="width:100%;">Buy Enterprise</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: rgba(255,255,255,0.02);">
+    <section id="faq" class="section">
         <div class="container">
-            <div class="grid-features">
-                <div class="feature-item">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h4>Instant Delivery</h4>
-                    <p style="color: var(--text-dim);">Get your account credentials via email within 30 seconds of purchase.</p>
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Is this really a lifetime license? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Yes. These accounts are created within an Enterprise environment that allows for one-time payment activation. You will never be billed monthly or annually.</div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h4>100% Genuine</h4>
-                    <p style="color: var(--text-dim);">Authentic licenses verified by Microsoft servers. No cracks or scripts.</p>
+                <div class="faq-item">
+                    <div class="faq-question">Are the apps genuine and original? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Absolutely. You download the software directly from official Microsoft servers and log in with the account we provide to activate.</div>
                 </div>
-                <div class="feature-item">
-                    <i class="fa-solid fa-infinity"></i>
-                    <h4>Never Expire</h4>
-                    <p style="color: var(--text-dim);">Unlike monthly subs, these accounts remain active for life. No hidden costs.</p>
+                <div class="faq-item">
+                    <div class="faq-question">What happens if I lose my device? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">You can log into your account from any new device and deactivate the old one. Your lifetime license follows your account, not the hardware.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 50px 0; border-top: 1px solid var(--glass-border); text-align: center;">
+    <footer>
         <div class="container">
-            <p style="color: var(--text-dim);">&copy; 2026 MicroGenix. Genuine Software Solutions.</p>
-            <div style="margin-top: 1rem; display: flex; gap: 2rem; justify-content: center;">
-                <a href="#" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">Privacy</a>
-                <a href="#" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">Terms</a>
-                <a href="#" style="color: var(--text-dim); text-decoration: none; font-size: 0.9rem;">Refunds</a>
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Cloud<span>Pro</span></a>
+                    <p style="color: #bbb;">Official Microsoft 365 licensing solutions with permanent activation. Your partner in cloud productivity.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Packages</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 CloudPro Solutions. Not affiliated with Microsoft Corp. All trademarks are property of their owners.
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(other => other.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth Scroll for Nav Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
